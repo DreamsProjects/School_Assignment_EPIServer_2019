@@ -1,0 +1,31 @@
+﻿@using EpiServer.Web.Mvc.Html
+@using LunaEpi.Models.ViewModels
+@using LunaEpi
+
+@model PageViewModel<LunaEpi.Models.Pages.StartPage>
+
+
+@section ImageContent
+    {
+    <h1 @Html.EditAttributes(m => m.CurrentPage.Heading)>
+        @(Model.CurrentPage.Heading ?? Model.CurrentPage.Name)
+    </h1>
+    <div @Html.EditAttributes(x => x.CurrentPage.PageImage)>
+        <img src="@Url.ContentUrl(Model.CurrentPage.PageImage)" class="imageResize" />
+    </div>
+}
+
+<div>
+    @Html.PropertyFor(m => m.CurrentPage.MainBody)
+</div>
+
+@section RelatedContent
+    {
+
+    @Html.PropertyFor(m => m.CurrentPage.SideBarContentArea,
+        new {Tag = SiteTags.Narrow, Class= "contentResize" })
+}
+
+
+@Html.PropertyFor(m => m.CurrentPage.MainContentArea,
+    new {Tag = SiteTags.Full })

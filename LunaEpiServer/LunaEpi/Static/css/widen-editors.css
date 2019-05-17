@@ -1,0 +1,7 @@
+﻿.Sleek .dijitTextBox {
+    width: 500px !important;
+}
+
+/* Affects: ContentArea */ .Sleek .epi-content-area-editor {
+    width: 500px !important;
+}

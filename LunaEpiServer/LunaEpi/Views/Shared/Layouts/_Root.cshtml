@@ -1,0 +1,86 @@
+﻿@using LunaEpi.Models.ViewModels
+@using LunaEpi.Models.Pages
+
+@model IPageViewModel<SitePageData>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dream</title>
+
+    <link rel="icon" type="image/png" href="~/Static/favicons/favicon-16x16.png" sizes="16x16">
+    <link href="~/Static/css/bootstrap.css" rel="stylesheet" />
+    <link rel="stylesheet" href="~/Static/fonts/font-awesome-4.3.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="~/Static/css/all.css">
+    <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700|Source+Sans+Pro:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+
+</head>
+<body>
+    @Html.RenderEPiServerQuickNavigator()
+    <div id="wrapper">
+        <header id="header" style="background-image:url('/Static/images/img-bg-01.jpg')">
+            <div class="container">
+                <div class="logo"><a href="#"><img src="~/Static/images/Luni.png" style="height:70px;width:70px;" alt="Sports"></a></div>
+                <nav id="nav">
+                    <div class="opener-holder">
+                        <a href="#" class="nav-opener"><span></span></a>
+                    </div>
+                    <a href="javascript:" class="btn btn-primary rounded">Enroll Today</a>
+                    <div class="nav-drop">
+                        @Html.Partial("_NavigationMenu", Model)
+                    </div>
+                </nav>
+            </div>
+        </header>
+        <section class="main area">
+            <div class="container">
+                <div class="row">
+
+                    <div style="margin-top:40px;">
+
+                        <div class="col-lg-3" style="background-image:url('/Static/images/img-bg-01.jpg');">
+
+                            @RenderSection("ImageContent", required: false)
+
+                            @RenderSection("RelatedContent", required: false)
+                        </div>
+
+                    </div>
+                    <div class="text-box col-lg-8">
+                        @RenderBody()
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <footer id="footer" style="background-image:url('/Static/images/img-bg-01.jpg')">
+            <div class="container">
+                <div class="footer-holder">
+                    <div class="row  text-center">
+                        <div class="col-md-12">
+                            <a href="#"><img src="~/Static/images/Luni.png" style="height:50px;width:50px;" alt="Sports HTML Template"></a>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div id="cta" class="cta-footer">
+                            <h6>Emmas Episerver</h6>
+                            @Html.Partial("_CompanyInfo", Model)
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+
+<style>
+    .imageResize, .contentResize {
+        max-width: 100%;
+        min-width: 100%;
+    }
+    .employees {
+        max-height: 70%;
+        overflow: auto;
+    }
+</style>

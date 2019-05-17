@@ -1,0 +1,15 @@
+﻿@model LunaEpi.Models.Blocks.EmployeeBlock
+
+<section class="area employees">
+    <div style="text-align: center;">
+        <div class="img-holder">
+            <img src="@Url.ContentUrl(Model.Picture)" style="height:60px; width:60px;" />
+        </div>
+        <em>
+            @Model.FirstName @Model.LastName
+            @Model.PhoneNumber
+            <br />
+            @Model.EmailAddress
+        </em>
+    </div>
+</section>

@@ -1,0 +1,12 @@
+﻿@using EPiServer.Core
+@using LunaEpi.Business.ExtensionMethods
+@using LunaEpi.Models.ViewModels
+@using LunaEpi.Models.Pages
+@model IPageViewModel<SitePageData>
+
+
+@Html.PropertyFor(x => x.CurrentPage.MetaTitle) -
+    @Html.PropertyFor(x => x.CurrentPage.MetaDescription)
+
+
+

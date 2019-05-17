@@ -1,0 +1,29 @@
+﻿@using EPiServer.Core
+@model LunaEpi.Models.ViewModels.ListingBlockViewModel 
+
+@if (Model.Pages == null)
+{
+    if (EPiServer.Editor.PageEditing.PageIsInEditMode)
+    {
+        <div class="label label-warning">
+            Set the ShowChildrenOfThisPage property to a page.
+        </div>
+    }
+}
+
+else
+{
+    <h2  @Html.EditAttributes(x => x.Heading)>@Model.Heading</h2>
+
+    if(Model.Pages.Count() == 0)
+    {
+        <div class="label warning">The page selected has no children</div>
+    }
+
+    foreach(PageData page in Model.Pages)
+    {
+        <div class="list-group-item">
+            <h3>@Html.ContentLink(page.ContentLink)</h3>
+        </div>
+    }
+}

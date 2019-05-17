@@ -1,0 +1,39 @@
+﻿@charset "utf-8";
+/* CSS Document */
+
+/*Content*/
+
+.equal-height .teaserblock .border {
+    min-height: 245px;
+}
+
+.teaserblock {
+    text-align: center;
+}
+
+    .teaserblock.full img, .teaserblock.wide img {
+        float: left;
+        margin-right: 30px;
+        max-width: 375px;
+        overflow: hidden;
+    }
+
+    .teaserblock.full h2, .teaserblock.full p, .teaserblock.wide h2, .teaserblock.wide p {
+        text-align: left;
+        margin: 0 10px 10px 0;
+    }
+
+    .teaserblock.full p, .teaserblock.wide p {
+        font-size: 1.3em;
+    }
+
+    .teaserblock.full h2, .teaserblock.wide h2 {
+        margin: 10px 10px 10px 0;
+        font-size: 3em;
+    }
+
+
+    .teaserblock p {
+        width: 96%;
+        margin-left: 2%;
+    }

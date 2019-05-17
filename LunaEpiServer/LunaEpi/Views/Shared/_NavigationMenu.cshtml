@@ -1,0 +1,34 @@
+﻿@using EPiServer.Core
+@using LunaEpi.Business.ExtensionMethods
+@using LunaEpi.Models.ViewModels
+@using LunaEpi.Models.Pages
+@model IPageViewModel<SitePageData>
+
+
+<ul>
+    <li>
+        @Html.ContentLink(ContentReference.StartPage)
+    </li>
+
+    @Html.MenuList(ContentReference.StartPage,
+                @<li class="@(item.Selected ? "active" : null)">
+                    @Html.PageLink(item.Page)
+                </li>)
+    <li>
+        @if (User.Identity.IsAuthenticated)
+        {
+            <a href="/en/logout">
+                Log out @User.Identity.Name
+            </a>
+        }
+
+        else
+        {
+            <a href="@FormsAuthentication.LoginUrl?ReturnUrl=@Model.CurrentPage.PageLink.ExternalURLFromReference()">
+
+                Log in
+            </a>
+
+        }
+    </li>
+</ul>
